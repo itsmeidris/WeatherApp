@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 //Weather animations
 String getWeatherAnimation(String? mainWeatherCondition) {
 
@@ -27,4 +29,24 @@ String getWeatherAnimation(String? mainWeatherCondition) {
     default:
       return 'assets/sunny.json';
   }
+}
+
+LinearGradient getBackgroundGradient(bool isDayTime) {
+  if (isDayTime) {
+    return const LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [Colors.blue, Colors.white],
+    );
+  } else {
+    return const LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [Colors.indigo, Colors.black],
+    );
+  }
+}
+
+Color getTextColor(bool isDayTime) {
+  return isDayTime ? Colors.black : Colors.white;
 }
